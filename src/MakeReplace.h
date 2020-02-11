@@ -6,15 +6,14 @@ namespace ord {
 
 class OpenRoad;
 
-// All of replace's state is global, so there is nothing to make;
-void *
+replace::Replace *
 makeReplace();
 
 void
 initReplace(OpenRoad *openroad);
 
 void
-deleteReplace(void *replace);
+deleteReplace(replace::Replace *replace);
 
 }
 

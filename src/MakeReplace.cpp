@@ -12,16 +12,20 @@ extern "C" {
 extern int Replace_Init(Tcl_Interp *interp);
 }
 
+namespace replace {
+class Replace;
+}
+
 namespace ord {
 
-void *
+replace::Replace *
 makeReplace()
 {
   return nullptr;
 }
 
 void
-deleteReplace(void *)
+deleteReplace(replace::Replace *)
 {
 }
 
