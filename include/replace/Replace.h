@@ -88,6 +88,7 @@ class Replace
     void setRoutabilityRcCoefficients(float k1, float k2, float k3, float k4);
   
     void setCustomNetWeight(odb::dbNet* net, float weight);
+    void clearCustomNetWeights();
 
   private:
     odb::dbDatabase* db_;

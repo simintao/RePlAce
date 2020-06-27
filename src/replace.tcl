@@ -214,4 +214,7 @@ proc set_global_placement_custom_net_weight { args } {
   set_replace_custom_net_weight_cmd $net $weight
 }
 
-
+proc set_global_placement_custom_net_weights_clear { args } {
+  sta::parse_key_args "set_global_placement_custom_net_weight_clear" args keys {} 
+  set_replace_custom_net_weights_clear_cmd
+}

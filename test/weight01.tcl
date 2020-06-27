@@ -8,6 +8,7 @@ set db [ord::get_db]
 set block [[$db getChip] getBlock]
 set dbNet [$block findNet _007_]
 set_global_placement_custom_net_weight $dbNet 1.2
+# set_global_placement_custom_net_weights_clear 
 
 global_placement -init_density_penalty 0.01 -skip_initial_place -disable_routability_driven
 

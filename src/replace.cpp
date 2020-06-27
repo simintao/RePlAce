@@ -366,5 +366,11 @@ Replace::setCustomNetWeight(odb::dbNet* net, float weight) {
   customNetWeightStor_.push_back(std::make_pair(net, weight)); 
 }
 
+void
+Replace::clearCustomNetWeights() {
+  customNetWeightStor_.clear();
+  customNetWeightStor_.shrink_to_fit();
+}
+
 }
 

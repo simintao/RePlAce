@@ -233,4 +233,11 @@ set_replace_custom_net_weight_cmd(odb::dbNet* net, float weight)
   replace->setCustomNetWeight(net, weight);
 }
 
+void
+set_replace_custom_net_weights_clear_cmd()
+{
+  Replace* replace = getReplace();
+  replace->clearCustomNetWeights();
+}
+
 %} // inline
