@@ -863,6 +863,8 @@ public:
 
   void updateDbGCells();
 
+  void setCustomGNetWeight(odb::dbNet* dbNet, float weight);
+
 private:
   NesterovBaseVars nbVars_;
   std::shared_ptr<PlacerBase> pb_;

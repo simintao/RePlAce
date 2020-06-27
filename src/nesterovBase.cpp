@@ -1788,6 +1788,12 @@ NesterovBase::getHpwl() {
   return hpwl;
 }
 
+void 
+NesterovBase::setCustomGNetWeight(odb::dbNet* dbNet, float weight) {
+  GNet* gNet = dbToNb(dbNet);
+  gNet->setCustomWeight(weight); 
+}
+
 
 
 // https://stackoverflow.com/questions/33333363/built-in-mod-vs-custom-mod-function-improve-the-performance-of-modulus-op
