@@ -166,6 +166,11 @@ void Replace::doNesterovPlace() {
 
 
   nb_ = std::make_shared<NesterovBase>(nbVars, pb_, log_);
+
+  // update net weights
+  for(auto& weightPair : customNetWeightStor_) {
+    nb_->setCustomGNetWeight( weightPair.first, weightPair.second );
+  } 
   
 
   RouteBaseVars rbVars;

@@ -226,5 +226,11 @@ set_replace_pad_right_cmd(int pad)
   replace->setPadRight(pad);
 }
 
+void
+set_replace_custom_net_weight_cmd(odb::dbNet* net, float weight)
+{
+  Replace* replace = getReplace();
+  replace->setCustomNetWeight(net, weight);
+}
 
 %} // inline

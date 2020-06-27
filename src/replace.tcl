@@ -205,3 +205,13 @@ proc global_placement { args } {
     puts "Error: no rows defined in design. Use initialize_floorplan to add rows."
   }
 }
+
+proc set_global_placement_custom_net_weight { args } {
+  sta::parse_key_args "set_global_placement_custom_net_weight" args keys {} 
+  set net [lindex $args 0]
+  set weight [lindex $args 1]
+
+  set_replace_custom_net_weight_cmd $net $weight
+}
+
+
