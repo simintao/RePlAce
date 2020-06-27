@@ -7,7 +7,7 @@ read_def ./$test_name.def
 set db [ord::get_db]
 set block [[$db getChip] getBlock]
 set dbNet [$block findNet _007_]
-set_replace_custom_net_weight_cmd $dbNet 1.2
+set_global_placement_custom_net_weight $dbNet 1.2
 
 global_placement -init_density_penalty 0.01 -skip_initial_place -disable_routability_driven
 
