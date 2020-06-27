@@ -215,9 +215,15 @@ class GNet {
     int ux() const;
     int uy() const;
 
+    // timingWeight : calculated from OpenSTA
+    // customWeight : pre-defined by user using Tcl
+    void setTimingWeight( float timingWeight );
     void setCustomWeight( float customWeight );
+
+    float timingWeight() const { return timingWeight_; }
     float customWeight() const { return customWeight_; }
-    float netWeight() const { return weight_; }
+    
+    float weight() const { return timingWeight_ * customWeight_; }
 
     void addGPin(GPin* gPin);
     void updateBox();
@@ -262,8 +268,8 @@ class GNet {
     int ux_;
     int uy_;
 
+    float timingWeight_;
     float customWeight_;
-    float weight_;
 
     //
     // weighted average WL model stor for better indexing
