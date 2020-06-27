@@ -68,6 +68,9 @@ void Replace::reset() {
   pb_.reset();
   nb_.reset();
 
+  customNetWeightStor_.clear();
+  customNetWeightStor_.shrink_to_fit();
+
   initialPlaceMaxIter_ = 20;
   initialPlaceMinDiffLength_ = 1500;
   initialPlaceMaxSolverIter_ = 100;
@@ -351,6 +354,11 @@ Replace::setPadLeft(int pad) {
 void
 Replace::setPadRight(int pad) {
   padRight_ = pad;
+}
+
+void
+Replace::setCustomNetWeight(odb::dbNet* net, float weight) {
+  customNetWeightStor_.push_back(std::make_pair(net, weight)); 
 }
 
 }

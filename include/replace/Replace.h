@@ -2,9 +2,11 @@
 #define __REPLACE_HEADER__
 
 #include <memory>
+#include <vector>
 
 namespace odb {
   class dbDatabase;
+  class dbNet;
 }
 namespace sta {
   class dbSta;
@@ -84,6 +86,8 @@ class Replace
     void setRoutabilityMaxInflationRatio(float ratio);
 
     void setRoutabilityRcCoefficients(float k1, float k2, float k3, float k4);
+  
+    void setCustomNetWeight(odb::dbNet* net, float weight);
 
   private:
     odb::dbDatabase* db_;
@@ -135,6 +139,9 @@ class Replace
     // temp variable; OpenDB should have these values. 
     int padLeft_;
     int padRight_;
+
+    // netWeight stor
+    std::vector<std::pair<odb::dbNet*, float>> customNetWeightStor_;
 
     int verbose_;
 };
